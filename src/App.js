@@ -5,7 +5,7 @@ import './main.css';
 
 
 function App(){
-  const [todos, setodos] = useState([]);
+  const [todos, setTodos] = useState([]);
   const addTodo = (text) => {
 
     const isDuplicate = todos.some((todo) => todo.text.toLowerCase() === text.toLowerCase());
@@ -15,11 +15,11 @@ function App(){
       }
 
     const newtodo = {id: Date.now(), text, completed:false};
-    setodos([...todos,newtodo]);
+    setTodos([...todos,newtodo]);
   };
 
   const toggleComplete = (id) => {
-    setodos(
+    setTodos(
       todos.map((todo) => 
         todo.id === id ? 
         {...todo, completed: !todo.completed} : todo
@@ -28,7 +28,7 @@ function App(){
   };
 
   const deleteTodo = (id) =>{
-    setodos(todos.filter((todo) => todo.id !== id));
+    setTodos(todos.filter((todo) => todo.id !== id));
   };
 
   return(
