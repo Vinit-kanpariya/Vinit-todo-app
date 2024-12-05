@@ -15,7 +15,7 @@ function App(){
       }
 
     const newtodo = {id: Date.now(), text, completed:false};
-    setTodos([...todos,newtodo]);
+    setTodos([...todos,newTodo]);
   };
 
   const toggleComplete = (id) => {
