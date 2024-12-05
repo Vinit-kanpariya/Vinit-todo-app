@@ -6,7 +6,6 @@ function TodoItem({ todo, toggleComplete, deleteTodo}){
             <input
             type="checkbox"
             checked = {todo.completed}
-            unchecked ={todo.incompleted}
             onChange={() => toggleComplete(todo.id)}/>
             <span>
                 {todo.text}
