@@ -10,7 +10,7 @@ function App(){
 
     const isDuplicate = todos.some((todo) => todo.text.toLowerCase() === text.toLowerCase());
       if(isDuplicate){
-        alert("This task is already added!");
+        alert((text) +" is already added!");
         return;
       }
 
