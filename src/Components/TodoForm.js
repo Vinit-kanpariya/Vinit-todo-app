@@ -15,6 +15,7 @@ function TodoForm ({addTodo}){
         <form onSubmit={handleSubmit} className="flex items-center gap-3 mb-6">
             <input
             type="text"
+            name="input"
             value={input}
             onChange={(e) => setInput(e.target.value)}
             className="p-2 border border-grey-500 rounded-md focus:outline-none focus:ring-1 focus:ring-blue-500"
