@@ -5,6 +5,7 @@ function TodoItem({ todo, toggleComplete, deleteTodo}){
         <div className="flex items-center justify-between p-2 border- b  border-grey-200 last:border-none">
             <input
             type="checkbox"
+            name="checkbox"
             checked = {todo.completed}
             onChange={() => toggleComplete(todo.id)}/>
             <span>
