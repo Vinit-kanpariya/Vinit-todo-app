@@ -14,7 +14,7 @@ function App(){
         return;
       }
 
-    const newtodo = {id: Date.now(), text, completed:false};
+    const newTodo = {id: Date.now(), text, completed:false};
     setTodos([...todos,newTodo]);
   };
 
