@@ -5,14 +5,11 @@ import { useEffect } from "react";
 import './main.css';
 
 function App(){
-  const [todos, setTodos] = useState([]);
-  
-  useEffect(() => {
-    const storedTodos = localStorage.getItem("Todos");
-    if (storedTodos) {
-      setTodos(JSON.parse(storedTodos));
-    }
-  }, []);
+
+  const [todos, setTodos] = useState(() => {
+    const storedTodos = JSON.parse(localStorage.getItem("todos"));
+    return storedTodos ? storedTodos : [];
+  });
 
   useEffect(() => {
     localStorage.setItem("todos", JSON.stringify(todos));
