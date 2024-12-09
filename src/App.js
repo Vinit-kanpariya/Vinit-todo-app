@@ -1,11 +1,24 @@
 import React, { useState } from "react";
 import TodoForm from "./Components/TodoForm"; 
 import TodoList from "./Components/TodoList";
+import { useEffect } from "react";
 import './main.css';
-
 
 function App(){
   const [todos, setTodos] = useState([]);
+  
+  useEffect(() => {
+    const storedTodos = localStorage.getItem("Todos");
+    if (storedTodos) {
+      setTodos(JSON.parse(storedTodos));
+    }
+  }, []);
+
+  useEffect(() => {
+    localStorage.setItem("todos", JSON.stringify(todos));
+  }, [todos]);
+
+   
   const addTodo = (text) => {
 
     const isDuplicate = todos.some((todo) => todo.text.toLowerCase() === text.toLowerCase());
